@@ -18,10 +18,10 @@ public class RotatorEngine extends Engine{
             if(jib.getCurrentCoordinate().angle - coordinate.angle < 180 &&
                     jib.getCurrentCoordinate().angle - coordinate.angle >= 0) {
                 jib.rotateCCW();
-//                System.out.printf("Angle: %d\n", jib.getCurrentCoordinate().angle);
+                System.out.printf("Angle: %d\n", jib.getCurrentCoordinate().angle);
             }else{
                 jib.rotateCW();
-//                System.out.printf("Angle: %d\n", jib.getCurrentCoordinate().angle);
+                System.out.printf("Angle: %d\n", jib.getCurrentCoordinate().angle);
             }
     }
 }
