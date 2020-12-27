@@ -14,11 +14,11 @@ public class VerticalEngine extends Engine{
         while(jib.getCurrentCoordinate().height != coordinate.height) {
             if (jib.getCurrentCoordinate().height > coordinate.height) {
                 jib.setLower();
-                System.out.printf("Height: %d\n", jib.getCurrentCoordinate().height);
+//                System.out.printf("Height: %d\n", jib.getCurrentCoordinate().height);
             }
             else if (jib.getCurrentCoordinate().height < coordinate.height) {
                 jib.setHigher();
-                System.out.printf("Height: %d\n", jib.getCurrentCoordinate().height);
+//                System.out.printf("Height: %d\n", jib.getCurrentCoordinate().height);
             }
         }
     }

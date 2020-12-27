@@ -14,11 +14,11 @@ public class HorizontalEngine extends Engine{
         while(jib.getCurrentCoordinate().radius != coordinate.radius) {
             if (jib.getCurrentCoordinate().radius > coordinate.radius) {
                 jib.setRadiusShorter();
-                System.out.printf("Radius: %d\n", jib.getCurrentCoordinate().radius);
+//                System.out.printf("Radius: %d\n", jib.getCurrentCoordinate().radius);
             }
             else if (jib.getCurrentCoordinate().radius < coordinate.radius) {
                 jib.setRadiusLonger();
-                System.out.printf("Radius: %d\n", jib.getCurrentCoordinate().radius);
+//                System.out.printf("Radius: %d\n", jib.getCurrentCoordinate().radius);
             }
         }
     }

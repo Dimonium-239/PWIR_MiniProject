@@ -1,10 +1,7 @@
 package com.pwir;
 
 import com.pwir.craneComponents.*;
-import com.pwir.supplier.Supplier;
-
-import java.util.LinkedList;
-import java.util.List;
+import com.pwir.supplier.runnable.SupplierRunner;
 
 public class Main {
 
@@ -15,14 +12,9 @@ public class Main {
                 .setMast(100)
                 .build();
 
-        Supplier supplier = new Supplier(crane.getJibLength(), crane.getMastHeight());
-
-        System.out.println(supplier);
         System.out.println(crane);
 
-        crane.startTask(supplier.getStartCoordinate(), supplier.getDestinationCoordinate());
-
-        System.out.println(crane);
-
+        Thread supplierThread = new Thread(new SupplierRunner(crane));
+        supplierThread.start();
     }
 }
