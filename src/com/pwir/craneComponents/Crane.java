@@ -6,13 +6,9 @@ import com.pwir.helpers.Coordinate;
 import com.pwir.craneComponents.runnable.RotatorEngine;
 import com.pwir.supplier.runnable.SupplierRunner;
 
-import java.io.IOException;
-import java.util.Collection;
-import java.util.LinkedList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.*;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 public class Crane implements Runnable {
     private final Jib jib;
@@ -63,7 +59,7 @@ public class Crane implements Runnable {
         VerticalEngine verticalEngine = new VerticalEngine(jib, position);
         HorizontalEngine horizontalEngine = new HorizontalEngine(jib, position);
 
-        List<Runnable> workers = List.of(rotatorEngine, verticalEngine, horizontalEngine);
+        List<Runnable> workers = Arrays.asList(rotatorEngine, verticalEngine, horizontalEngine);
         ExecutorService executor = Executors.newCachedThreadPool();
         workers.forEach(executor::execute);
         executor.shutdown();

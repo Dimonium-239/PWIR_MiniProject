@@ -33,7 +33,7 @@ public class Supply {
     @Override
     public String toString() {
         return "\n####  Supplier  ####" +
-                "\nstartCoordinate:" + startCoordinate +
-                "\ndestinationCoordinate:" + destinationCoordinate;
+                "\nstart " + startCoordinate +
+                "destination " + destinationCoordinate;
     }
 }

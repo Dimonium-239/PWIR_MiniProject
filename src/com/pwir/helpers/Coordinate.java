@@ -6,6 +6,10 @@ public class Coordinate {
     public int radius;
     public int angle;
     public int height;
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_CYAN = "\u001B[36m";
 
     public Coordinate(int radius, int angle, int height) {
         this.radius = radius;
@@ -28,9 +32,9 @@ public class Coordinate {
 
     @Override
     public String toString() {
-        return "Coord: (r: " + radius +
-                ", a: " + angle + "°" +
-                ", h: " + height +
+        return "Coordinate: (r: " + ANSI_GREEN + radius + ANSI_RESET + "m" +
+                ", a: " + ANSI_RED + angle + ANSI_RESET + "°" +
+                ", h: " + ANSI_CYAN + height + ANSI_RESET + "m" +
                 ")\n";
     }
 }

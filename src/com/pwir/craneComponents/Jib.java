@@ -74,6 +74,6 @@ public class Jib {
     @Override
     public String toString() {
         return "\nJibs " +
-                "currentCoordinate:\n" + currentCoordinate;
+                "current " + currentCoordinate;
     }
 }
