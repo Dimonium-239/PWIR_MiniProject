@@ -4,11 +4,11 @@ import com.pwir.helpers.Coordinate;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Supplier {
+public class Supply {
     private final Coordinate startCoordinate;
     private final Coordinate destinationCoordinate;
 
-    public Supplier(int jibLength, int mastHeight) {
+    public Supply(int jibLength, int mastHeight) {
         int distFromCraneStart = ThreadLocalRandom.current().nextInt(0, jibLength);
         int distFromCraneDest = ThreadLocalRandom.current().nextInt(0, jibLength );
 

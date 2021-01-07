@@ -67,7 +67,9 @@ public class Crane implements Runnable {
         ExecutorService executor = Executors.newCachedThreadPool();
         workers.forEach(executor::execute);
         executor.shutdown();
-        while (!executor.isTerminated() || !executor.isShutdown()) ;
+        try {
+            executor.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+        } catch (InterruptedException ignored) {}
     }
 
     public int getJibLength() {
@@ -95,7 +97,7 @@ public class Crane implements Runnable {
     public void run() {
         while (true) {
             try{
-            if (!this.supplierRunner.checkSuppliersAvailable()) {
+            if (this.supplierRunner.checkSuppliersAvailable()) {
                 this.startTask(this.supplierRunner.getLastSuppliersCoordinate());
             }}catch (Exception e) {
                 System.out.println(e);
