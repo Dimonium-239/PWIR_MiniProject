@@ -11,8 +11,9 @@ public class Main {
                 .setJib(50)
                 .setMast(100)
                 .build();
+        Thread craneThread = new Thread(crane);
+        craneThread.start();
 
-        System.out.println(crane);
 
         Thread supplierThread = new Thread(new SupplierRunner(crane));
         supplierThread.start();
