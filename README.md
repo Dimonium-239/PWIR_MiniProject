@@ -1,14 +1,3 @@
-# PWiR Dokumentacja
-
-Created: Jan 7, 2021 12:56 PM
-Created By: Dmytro Kuzmin
-Last Edited Time: Jan 7, 2021 6:31 PM
-Participants: vlc clv
-
-## Link do kodu
-
-[https://github.com/Dimonium-239/PWIR_MiniProject](https://github.com/Dimonium-239/PWIR_MiniProject)
-
 ## Wstęp
 
 Realizowaliśmy projekt na temat dźwigu w języku Java. Realizowaliśmy działanie żurawa wieżowego górno obrotowego.
