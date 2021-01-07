@@ -8,7 +8,7 @@ import java.util.*;
 
 public class SupplierRunner implements Runnable {
     private final Crane crane;
-    private LinkedList<Supply> supplies = new LinkedList<>();
+    private final LinkedList<Supply> supplies = new LinkedList<>();
     private Supply currentSupply;
 
     public SupplierRunner(Crane crane) {
