@@ -1,3 +1,10 @@
+## HOW TO RUN
+
+```
+java -jar ./PWIR_MiniProject_jar/PWIR_MiniProject.jar
+```
+
+
 ## Wstęp
 
 Realizowaliśmy projekt na temat dźwigu w języku Java. Realizowaliśmy działanie żurawa wieżowego górno obrotowego.
