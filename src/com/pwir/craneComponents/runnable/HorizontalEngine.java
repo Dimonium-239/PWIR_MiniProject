@@ -20,6 +20,11 @@ public class HorizontalEngine extends Engine{
                 jib.setRadiusLonger();
 //                System.out.printf("Radius: %d\n", jib.getCurrentCoordinate().radius);
             }
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

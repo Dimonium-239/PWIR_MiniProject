@@ -20,6 +20,11 @@ public class VerticalEngine extends Engine{
                 jib.setHigher();
 //                System.out.printf("Height: %d\n", jib.getCurrentCoordinate().height);
             }
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

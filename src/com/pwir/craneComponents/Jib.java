@@ -7,6 +7,7 @@ public class Jib {
     private final int mastHeight;
     private final Coordinate currentCoordinate;
     private final AngleIterator angleIterator;
+    private Crane crane;
 
 
     public Jib(int jibLength, Coordinate currentCoordinate, int mastHeight) {
@@ -14,6 +15,10 @@ public class Jib {
         this.currentCoordinate = currentCoordinate;
         this.angleIterator = new AngleIterator(currentCoordinate.angle);
         this.mastHeight = mastHeight;
+    }
+
+    public void associateWithCrane(Crane crane){
+        this.crane = crane;
     }
 
     public int getJibLength() {
@@ -25,36 +30,50 @@ public class Jib {
     }
 
     public void setHigher(){
-        if (currentCoordinate.height < mastHeight)
+        synchronized( System.class ) {
+            System.out.println(crane);
+        }        if (currentCoordinate.height < mastHeight)
             currentCoordinate.height++;
     }
 
     public void setLower(){
-        if (currentCoordinate.height > 0)
+        synchronized( System.class ) {
+            System.out.println(crane);
+        }        if (currentCoordinate.height > 0)
             currentCoordinate.height--;
     }
 
     public void setRadiusLonger(){
-        if (currentCoordinate.radius < jibLength)
+        synchronized( System.class ) {
+            System.out.println(crane);
+        }        if (currentCoordinate.radius < jibLength)
             currentCoordinate.radius++;
     }
 
     public void setRadiusShorter(){
-        if (currentCoordinate.radius > 0)
+        synchronized( System.class ) {
+            System.out.println(crane);
+        }        if (currentCoordinate.radius > 0)
             currentCoordinate.radius--;
     }
 
     public void rotateCW(){
-        currentCoordinate.angle = angleIterator.next();
+        synchronized( System.class ) {
+            System.out.println(crane);
+        }        currentCoordinate.angle = angleIterator.next();
     }
 
     public void rotateCCW(){
+        synchronized( System.class )
+        {
+            System.out.println(crane);
+        }
         currentCoordinate.angle = angleIterator.prev();
     }
 
     @Override
     public String toString() {
         return "\nJibs " +
-                "currentCoordinate:\n" + currentCoordinate;
+                "current " + currentCoordinate;
     }
 }
